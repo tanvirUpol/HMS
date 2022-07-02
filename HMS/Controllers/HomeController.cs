@@ -26,15 +26,32 @@ namespace HMS.Controllers
         {
 
                 HMSEntities db = new HMSEntities();
-                var st = (from s in db.Admins
-                          where s.Name.Equals(e.Name)
+                var ad = (from s in db.Admins
+                          where s.Id.Equals(e.Id)
                           && s.Password.Equals(e.Password)
                           select s).SingleOrDefault();
-                if (st != null)
-                {
-                    Session["logged_user"] = st.Id;
-                    return RedirectToAction("Index", "Home");
-                }
+
+           
+                var mem = (from s in db.Members
+                            where s.Id.Equals(e.Id)
+                            && s.Password.Equals(e.Password)
+                            select s).SingleOrDefault();
+
+           
+
+
+
+            if (ad != null)
+            {
+                Session["logged_user"] = ad.Id;
+                return RedirectToAction("Index", "Admin");
+            }
+            else if (mem != null)
+            {
+                Session["logged_user"] = mem.Id;
+                return RedirectToAction("Index", "Member");
+            }
+
                 TempData["msg"] = "User Does not exist";
                 return View();
  
