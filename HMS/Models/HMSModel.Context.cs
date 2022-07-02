@@ -13,10 +13,10 @@ namespace HMS.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HMSEntities : DbContext
+    public partial class HMSEntities2 : DbContext
     {
-        public HMSEntities()
-            : base("name=HMSEntities")
+        public HMSEntities2()
+            : base("name=HMSEntities2")
         {
         }
     
