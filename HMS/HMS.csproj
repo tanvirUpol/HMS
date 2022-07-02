@@ -135,6 +135,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HMSModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Member.cs">
+      <DependentUpon>HMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
