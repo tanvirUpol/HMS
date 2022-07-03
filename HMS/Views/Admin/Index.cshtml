@@ -1,8 +1,25 @@
-﻿
+﻿@model HMS.Models.Admin
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+    Layout = null;
 }
 
-<h2>This is Admin Home Page</h2>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h4>Admin</h4>
+        <h3>@Model.Name</h3>
+        <h3>@Model.Phone</h3>
+        <h3>@Model.Email</h3>
+    </div>
+    <p>
+        <a href="/Admin/Edit/@Model.Id">Edit</a> |
+    </p>
+</body>
+</html>

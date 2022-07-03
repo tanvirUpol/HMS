@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using HMS.Models;
 
 namespace HMS.Controllers
@@ -22,25 +23,25 @@ namespace HMS.Controllers
 
 
         [HttpPost]
-        public ActionResult Login(int id , string password)
+        public ActionResult Login(Admin e)
         {
 
                 HMSEntities db = new HMSEntities();
                 var ad = (from s in db.Admins
-                          where s.Id.Equals(id)
-                          && s.Password.Equals(password)
+                          where s.Id.Equals(e.Id)
+                          && s.Password.Equals(e.Password)
                           select s).SingleOrDefault();
 
            
                 var mem = (from s in db.Members
-                            where s.Id.Equals(id)
-                            && s.Password.Equals(password)
+                            where s.Id.Equals(e.Id)
+                            && s.Password.Equals(e.Password)
                             select s).SingleOrDefault();
 
-            var staff = (from s in db.Staffs
-                       where s.Id.Equals(id)
-                       && s.Password.Equals(password)
-                       select s).SingleOrDefault();
+                var staff = (from s in db.Staffs
+                           where s.Id.Equals(e.Id)
+                           && s.Password.Equals(e.Password)
+                           select s).SingleOrDefault();
 
 
 
@@ -48,16 +49,20 @@ namespace HMS.Controllers
 
             if (ad != null)
             {
+                FormsAuthentication.SetAuthCookie(ad.Id.ToString(), true);
                 Session["logged_user"] = ad.Id;
+
                 return RedirectToAction("Index", "Admin");
             }
             else if (mem != null)
             {
+                FormsAuthentication.SetAuthCookie(mem.Id.ToString(), true);
                 Session["logged_user"] = mem.Id;
                 return RedirectToAction("Index", "Member");
             }
             else if (staff != null)
             {
+                FormsAuthentication.SetAuthCookie(staff.Id.ToString(), true);
                 Session["logged_user"] = staff.Id;
                 return RedirectToAction("Index", "Staff");
             }
@@ -65,6 +70,14 @@ namespace HMS.Controllers
             TempData["msg"] = "User Does not exist";
                 return View();
  
+        }
+
+
+        public ActionResult Logout()
+        {
+            Session.Remove("logged_user");
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
         }
 
     }

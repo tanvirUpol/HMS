@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\mark-1 t\Source\Repos\HMS\HMS\Models\HMSModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\C#_101\HMS\HMS\Models\HMSModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
