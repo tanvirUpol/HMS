@@ -22,22 +22,27 @@ namespace HMS.Controllers
 
 
         [HttpPost]
-        public ActionResult Login(Admin e)
+        public ActionResult Login(int id , string password)
         {
 
                 HMSEntities db = new HMSEntities();
                 var ad = (from s in db.Admins
-                          where s.Id.Equals(e.Id)
-                          && s.Password.Equals(e.Password)
+                          where s.Id.Equals(id)
+                          && s.Password.Equals(password)
                           select s).SingleOrDefault();
 
            
                 var mem = (from s in db.Members
-                            where s.Id.Equals(e.Id)
-                            && s.Password.Equals(e.Password)
+                            where s.Id.Equals(id)
+                            && s.Password.Equals(password)
                             select s).SingleOrDefault();
 
-           
+            var staff = (from s in db.Staffs
+                       where s.Id.Equals(id)
+                       && s.Password.Equals(password)
+                       select s).SingleOrDefault();
+
+
 
 
 
@@ -51,8 +56,13 @@ namespace HMS.Controllers
                 Session["logged_user"] = mem.Id;
                 return RedirectToAction("Index", "Member");
             }
+            else if (staff != null)
+            {
+                Session["logged_user"] = staff.Id;
+                return RedirectToAction("Index", "Staff");
+            }
 
-                TempData["msg"] = "User Does not exist";
+            TempData["msg"] = "User Does not exist";
                 return View();
  
         }
