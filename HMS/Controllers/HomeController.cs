@@ -7,8 +7,15 @@ using HMS.Models;
 
 namespace HMS.Controllers
 {
+
+
     public class HomeController : Controller
     {
+
+
+
+
+
         // GET: Home
         public ActionResult Index()
         {
@@ -22,24 +29,24 @@ namespace HMS.Controllers
 
 
         [HttpPost]
-        public ActionResult Login(int id , string password)
+        public ActionResult Login(Admin e)
         {
 
                 HMSEntities db = new HMSEntities();
                 var ad = (from s in db.Admins
-                          where s.Id.Equals(id)
-                          && s.Password.Equals(password)
+                          where s.Id.Equals(e.Id)
+                          && s.Password.Equals(e.Password)
                           select s).SingleOrDefault();
 
            
                 var mem = (from s in db.Members
-                            where s.Id.Equals(id)
-                            && s.Password.Equals(password)
+                            where s.Id.Equals(e.Id)
+                            && s.Password.Equals(e.Password)
                             select s).SingleOrDefault();
 
             var staff = (from s in db.Staffs
-                       where s.Id.Equals(id)
-                       && s.Password.Equals(password)
+                       where s.Id.Equals(e.Id)
+                       && s.Password.Equals(e.Password)
                        select s).SingleOrDefault();
 
 
@@ -67,5 +74,22 @@ namespace HMS.Controllers
  
         }
 
+        
+        public ActionResult MemberRegistration()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult MemberRegistration(Member m)
+        {
+            HMSEntities db = new HMSEntities();
+            m.Type = 2;
+            db.Members.Add(m);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
     }
 }

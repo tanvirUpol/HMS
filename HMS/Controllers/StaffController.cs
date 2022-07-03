@@ -26,5 +26,8 @@ namespace HMS.Controllers
             db.SaveChanges();
             return View();
         }
+
+
+
     }
 }
