@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalGro</title>
+</head>
+<body>
+    <div>
+        <h3>Grocery Calculation and Details</h3>
+        <form action="/Staff/CalGro" method="post">
+            <span class="text-info">@TempData["msg"]</span>
+            <div class="container">
+                <label for="Date"> <b>Date and Time</b> </label>
+                <input type="text" placeholder="Date Time" name="Date" readonly value="@DateTime.Now.ToString("dddd, dd MMMM yyyy")">
+
+                <label for="Price"><b>Price</b></label>
+                <input type="number" placeholder="Enter Price" name="Price">
+
+                <label for="Product"><b>Product</b></label>
+                <input type="text" placeholder="Details" name="Product">
+
+                <button type="submit">Submit</button>
+
+            </div>
+
+
+        </form>
+    </div>
+</body>
+</html>

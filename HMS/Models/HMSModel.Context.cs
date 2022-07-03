@@ -28,5 +28,6 @@ namespace HMS.Models
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Staff> Staffs { get; set; }
+        public DbSet<CalGro> CalGros { get; set; }
     }
 }
