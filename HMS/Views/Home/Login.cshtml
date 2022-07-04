@@ -1,22 +1,23 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Home_Layout.cshtml";
 }
 
-<h2>Login</h2>
 
 <form action="/Home/Login" method="post">
-    <span class="text-info">@TempData["msg"]</span>
-    <div class="container">
-        <label for="name">Id</label>
-        <input type="text" placeholder="Enter Your ID" name="Id">
+    <h2 class="text-heading">Login to Hostel Portal</h2>
+    <div class="form-container">
+        <span class="text-info">@TempData["msg"]</span>
+        <div class="form-control">
+            <label for="name"><b>Id</b></label>
+            <input type="text" placeholder="Enter Your ID" name="Id">
+        </div>
+        <div class="form-control">
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="Password">
+        </div>
 
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="Password">
-
-        <button type="submit">Login</button>
-       
+        <input class="btn" type="submit" value="Login">
     </div>
 
 

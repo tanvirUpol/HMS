@@ -1,19 +1,24 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>@Page.Title</title>
+    <link href="~/Content/Navbar.css" rel="stylesheet" type="text/css" />
     @RenderSection("head", required: false)
 </head>
+
 <body>
     <header id="navbar">
         <nav class="navbar container">
             <div class="logo">
-                <a href="#showcase"><h3>Easy Hostel</h3></a>
+                <a href="#showcase">
+                    <h3>Easy Hostel</h3>
+                </a>
             </div>
             <ul class="links">
-                <li><a href="#showcase">Home</a></li>
-                <li><a href="#story">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Contact">Contact</a></li>
                 <li>
                     <a href="#">
                         Log In
@@ -41,4 +46,5 @@
         <p>FOOTER PART</p>
     </footer>
 </body>
+
 </html>

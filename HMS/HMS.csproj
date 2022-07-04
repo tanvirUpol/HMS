@@ -94,6 +94,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\forms.css" />
+    <Content Include="Content\Home.css" />
+    <Content Include="Content\images\undraw_apartment_rent_o-0-ut.svg" />
+    <Content Include="Content\Navbar.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\HMSModel.Context.tt">

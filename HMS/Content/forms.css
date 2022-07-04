@@ -1,0 +1,43 @@
+﻿form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 94%;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.text-info{
+    text-align: center;
+    color: red;
+}
+
+.text-heading{
+    text-align: center;
+    margin-top: 100px;
+}

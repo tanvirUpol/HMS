@@ -1,0 +1,41 @@
+﻿
+
+.showcase-img img{
+    max-width: 600px;
+}
+
+.container{
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showcase{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.showcase .info{
+  width: 500px;
+  
+}
+
+.showcase .info p{
+ margin-bottom: 15px;
+ 
+}
+
+
+.btn{
+  background-color: rgb(73, 134, 204);
+  padding: 12px 18px;
+  color: #fff;
+  border-radius: 5px;
+  
+}
+
+
+
