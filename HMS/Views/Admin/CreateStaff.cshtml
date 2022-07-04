@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "CreateStaff";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+
+<div class="admin-form">
+
+    <h2 style="text-align:center">Create Staff</h2>
+
+    <form action="/Admin/CreateStaff" method="post">
+
+        <div class="form-container">
+            <div class="form-control">
+                <label for="Name">Name</label>
+                <input id="Name" name="Name" type="text" value="" />
+            </div>
+
+            <div class="form-control">
+                <label for="Age">Age</label>
+                <input id="Age" name="Age" type="number" value="" />
+            </div>           
+            
+            <div class="form-control">
+                <label>Gender</label>
+                <label for="Gender">Male</label>
+                <input style="width:auto" type="radio" name="Gender" value="male">
+                <label for="Gender">Female</label>
+                <input style="width:auto" type="radio" name="Gender" value="female"> 
+
+            </div>
+
+            <div class="form-control">
+                <label for="Address">Address</label>
+                <input id="Address" name="Address" type="text" value="" />
+
+            </div> 
+            
+            <div class="form-control">
+                <label for="Phone">Phone</label>
+                <input id="Phone" name="Phone" type="text" value="" />
+
+            </div>
+
+           
+
+            <div class="form-control">
+                <label for="Password">Password</label>
+                <input class="form-control" id="Password" name="Password" type="text" value="" />
+            </div>
+            <input class="btn" type="submit" value="Create" />
+        </div>
+
+
+    </form>
+
+</div>

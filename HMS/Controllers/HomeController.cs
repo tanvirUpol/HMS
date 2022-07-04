@@ -79,6 +79,19 @@ namespace HMS.Controllers
  
         }
 
+        public ActionResult Logout()
+        {
+            Session.Remove("logged_user");
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
+
+        public ActionResult MemberRegistration()
+        {
+            return View();
+
+        }
+
         [HttpPost]
         public ActionResult MemberRegistration(Member m)
         {

@@ -6,25 +6,35 @@
 }
 
 
-<!DOCTYPE html>
+<div class="admin-container">
+    <div class="admin-contents">
 
-<html>
+        <h2>Admin Profile</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>@Model.Name</td>
 
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
 
-<body>
-    <div>
-        <h4>Admin</h4>
-        <h3>@Model.Name</h3>
-        <h3>@Model.Phone</h3>
-        <h3>@Model.Email</h3>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>@Model.Phone</td>
+
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td>@Model.Email</td>
+            </tr>
+
+        </table>
+        <br>
+        <p>
+            <a class="btn" href="/Admin/EditAdmin/@Model.Id">Update Profile</a>
+            <a class="btn btnList" href="/Admin/ListAdmin">List of Admin</a>
+        </p>
+
     </div>
-    <p>
-        <a href="/Admin/Edit/@Model.Id">Edit</a> |
-    </p>
-</body>
 
-</html>
+</div>

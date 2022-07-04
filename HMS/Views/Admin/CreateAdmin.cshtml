@@ -1,0 +1,42 @@
+﻿@model HMS.Models.Admin
+
+@{
+    ViewBag.Title = "CreateAdmin";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="admin-form">
+
+    <h2 style="text-align:center">Create Admin</h2>
+
+    <form action="/Admin/CreateAdmin" method="post">
+
+        <div class="form-container">
+            <div class="form-control">
+                <label for="Name">Name</label>
+                <input id="Name" name="Name" type="text" value="" />
+            </div>
+
+            <div class="form-control">
+                <label for="Phone">Phone</label>
+                <input id="Phone" name="Phone" type="text" value="" />
+
+            </div>
+
+            <div class="form-control">
+                <label for="Email">Email</label>
+                <input class="form-control" id="Email" name="Email" type="text" value="" />
+
+            </div>
+
+            <div class="form-control">
+                <label for="Password">Password</label>
+                <input class="form-control" id="Password" name="Password" type="text" value="" />
+            </div>
+            <input class="btn" type="submit" value="Create" />
+        </div>
+
+
+    </form>
+
+</div>

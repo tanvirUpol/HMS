@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\admin.css" />
     <Content Include="Content\forms.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\images\undraw_apartment_rent_o-0-ut.svg" />
@@ -176,6 +177,11 @@
     <Content Include="Views\Shared\_Admin_Layout.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\Staff\CalGro.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\ListAdmin.cshtml" />
+    <Content Include="Views\Admin\CreateAdmin.cshtml" />
+    <Content Include="Views\Admin\ListStaff.cshtml" />
+    <Content Include="Views\Admin\CreateStaff.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

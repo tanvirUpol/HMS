@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HMS.Models.Admin>
+
+@{
+    ViewBag.Title = "ListAdmin";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<h2>ListAdmin</h2>
+
+<p>
+    <a class="btn" href="/Admin/CreateAdmin">Create New</a>
+</p>
+<table class="table-admins">
+    <tr>
+        <th>
+           Name
+        </th>
+        <th>
+           Phone
+        </th>
+        <th>
+           Email
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.Phone
+        </td>
+        <td>
+            @item.Email
+        </td>
+        
+        <td>
+            <a class="btn" href="/Admin/Edit/@item.Id">Edit</a> 
+            <a class="btn" style="background-color:darkred; margin-left:5px" href="/Admin/DeleteAdmin/@item.Id">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

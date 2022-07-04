@@ -4,6 +4,8 @@
 <head>
     <title>@Page.Title</title>
     <link href="~/Content/Navbar.css" rel="stylesheet" type="text/css" />
+   <link href="~/Content/admin.css" rel="stylesheet" type="text/css" />
+   <link href="~/Content/forms.css" rel="stylesheet" type="text/css" />
     @RenderSection("head", required: false)
 </head>
 
@@ -11,19 +13,15 @@
     <header id="navbar">
         <nav class="navbar container">
             <div class="logo">
-                <a href="#showcase">
-                    <h3>Easy Hostel</h3>
+                <a href="/Admin/index">
+                    <h3>Easy Hostel Admin</h3>
                 </a>
             </div>
             <ul class="links">
-                <li><a href="#Home">Home</a></li>
+                <li><a href="/Admin/listStaff">Members</a></li>
                 <li><a href="#About">About</a></li>
                 <li><a href="#Contact">Contact</a></li>
-                <li>
-                    <a href="#">
-                        Log In
-                    </a>
-                </li>
+
 
                 <li>
                     <a href="#">
@@ -42,8 +40,10 @@
     <div class="rendered">
         @RenderBody()
     </div>
+
+
     <footer>
-        <p>FOOTER PART</p>
+        <p class="copyright">Easy Hostel © 2022</p>
     </footer>
 </body>
 
