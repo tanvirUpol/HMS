@@ -8,8 +8,15 @@ using HMS.Models;
 
 namespace HMS.Controllers
 {
+
+
     public class HomeController : Controller
     {
+
+
+
+
+
         // GET: Home
         public ActionResult Index()
         {
@@ -72,13 +79,16 @@ namespace HMS.Controllers
  
         }
 
-
-        public ActionResult Logout()
+        [HttpPost]
+        public ActionResult MemberRegistration(Member m)
         {
-            Session.Remove("logged_user");
-            FormsAuthentication.SignOut();
-            return RedirectToAction("Login");
-        }
+            HMSEntities db = new HMSEntities();
+            m.Type = 2;
+            db.Members.Add(m);
+            db.SaveChanges();
 
+            return RedirectToAction("Index");
+
+        }
     }
 }

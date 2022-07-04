@@ -145,7 +145,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HMSModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MealInfo.cs">
+      <DependentUpon>HMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Member.cs">
+      <DependentUpon>HMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Request_Services.cs">
       <DependentUpon>HMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Staff.cs">
@@ -170,7 +176,6 @@
     <Content Include="Views\Shared\_Admin_Layout.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\Staff\CalGro.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
