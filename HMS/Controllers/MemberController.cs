@@ -9,6 +9,7 @@ namespace HMS.Controllers
     public class MemberController : Controller
     {
         // GET: Member
+
         public ActionResult Index()
         {
             return View();
