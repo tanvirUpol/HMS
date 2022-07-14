@@ -8,6 +8,8 @@
 <div class="admin-form">
 
     <h2 style="text-align:center">Create Staff</h2>
+    <br />
+    <br />
 
     <form action="/Admin/CreateStaff" method="post">
 
@@ -24,10 +26,12 @@
             
             <div class="form-control">
                 <label>Gender</label>
-                <label for="Gender">Male</label>
-                <input style="width:auto" type="radio" name="Gender" value="male">
-                <label for="Gender">Female</label>
-                <input style="width:auto" type="radio" name="Gender" value="female"> 
+                <br />
+                
+                <p style="display: inline" for="Gender">Male</p>
+                <input  type="radio" name="Gender" value="male">
+                <p style="display: inline; margin-left: 10px;" for="Gender">Female</p>
+                <input  type="radio" name="Gender" value="female"> 
 
             </div>
 
@@ -47,7 +51,7 @@
 
             <div class="form-control">
                 <label for="Password">Password</label>
-                <input class="form-control" id="Password" name="Password" type="text" value="" />
+                <input id="Password" name="Password" type="text" value="" />
             </div>
             <input class="btn" type="submit" value="Create" />
         </div>

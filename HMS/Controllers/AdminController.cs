@@ -50,6 +50,35 @@ namespace HMS.Controllers
 
         }
 
+        public ActionResult UpdateAdmin(int Id)
+        {
+            HMSEntities db = new HMSEntities();
+            var ad = (from st in db.Admins
+                           where st.Id == Id
+                           select st).FirstOrDefault();
+
+            return View(ad);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateAdmin(Admin s)
+        {
+            using (HMSEntities db = new HMSEntities())
+            {
+                var ad = (from st in db.Admins
+                               where st.Id == s.Id
+                               select st).FirstOrDefault();
+                ad.Type = 1;
+                ad.Name = s.Name;
+                ad.Phone = s.Phone;
+                ad.Email = s.Email;
+                ad.Password = s.Password;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+        }
+
         public ActionResult DeleteAdmin(int id)
         {
             HMSEntities db = new HMSEntities();
@@ -57,6 +86,35 @@ namespace HMS.Controllers
             db.Admins.Remove(st);
             db.SaveChanges();
             return RedirectToAction("ListAdmin");
+        }
+
+        public ActionResult EditAdmins(int Id)
+        {
+            HMSEntities db = new HMSEntities();
+            var ad = (from st in db.Admins
+                      where st.Id == Id
+                      select st).FirstOrDefault();
+
+            return View(ad);
+        }
+
+        [HttpPost]
+        public ActionResult EditAdmins(Admin s)
+        {
+            using (HMSEntities db = new HMSEntities())
+            {
+                var ad = (from st in db.Admins
+                               where st.Id == s.Id
+                               select st).FirstOrDefault();
+                ad.Type = 1;
+                ad.Name = s.Name;
+                ad.Phone = s.Phone;
+                ad.Email = s.Email;
+                ad.Password = s.Password;
+                db.SaveChanges();
+                return RedirectToAction("ListAdmin");
+            }
+
         }
 
         public ActionResult ListStaff()
@@ -85,6 +143,49 @@ namespace HMS.Controllers
             return RedirectToAction("ListStaff");
 
         }
+
+
+
+        public ActionResult EditStaff(int Id)
+        {
+            HMSEntities db = new HMSEntities();
+            var ad = (from st in db.Staffs
+                      where st.Id == Id
+                      select st).FirstOrDefault();
+
+            return View(ad);
+        }
+
+        [HttpPost]
+        public ActionResult EditStaff(Staff s)
+        {
+            using (HMSEntities db = new HMSEntities())
+            {
+                var ad = (from st in db.Staffs
+                          where st.Id == s.Id
+                          select st).FirstOrDefault();
+                ad.Type = 3;
+                ad.Name = s.Name;            
+                ad.Age = s.Age;
+                ad.Gender = s.Gender;
+                ad.Address = s.Address;
+                ad.Phone = s.Phone;
+                ad.Password = s.Password;
+                db.SaveChanges();
+                return RedirectToAction("ListStaff");
+            }
+
+        }
+
+        public ActionResult DeleteStaff(int id)
+        {
+            HMSEntities db = new HMSEntities();
+            var st = (from s in db.Staffs where s.Id == id select s).SingleOrDefault();
+            db.Staffs.Remove(st);
+            db.SaveChanges();
+            return RedirectToAction("ListStaff");
+        }
+
 
 
     }

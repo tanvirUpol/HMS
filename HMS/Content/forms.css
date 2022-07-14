@@ -19,10 +19,23 @@
 }
 
 
+
+label {
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+
 input {
     padding: 10px;
     margin-bottom: 15px;
     width: 94%;
+    margin-top: 5px
 }
 
 .btn {
@@ -45,3 +58,4 @@ input {
 input[type="radio"] {
     width: auto;
 }
+

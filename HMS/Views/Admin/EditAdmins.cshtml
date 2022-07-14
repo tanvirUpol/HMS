@@ -1,0 +1,51 @@
+﻿@model HMS.Models.Admin
+
+@{
+    ViewBag.Title = "EditAdmins";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<h2>EditAdmins</h2>
+<div class="admin-form">
+
+    <h2 style="text-align:center">Create Admin</h2>
+
+    <form action="/Admin/EditAdmins" method="post">
+
+        <div class="form-container">
+            <div class="form-control">
+                <label for="Id">ID</label>
+                <input id="Id" name="Id" type="text" value="@Model.Id" readonly />
+            </div>
+            <div class="form-control">
+                <label for="Name">Name</label>
+                <input id="Name" name="Name" type="text" value="@Model.Name" />
+            </div>
+
+            <div class="form-control">
+                <label for="Phone">Phone</label>
+                <input id="Phone" name="Phone" type="text" value="@Model.Phone" />
+
+            </div>
+
+            <div class="form-control">
+                <label for="Email">Email</label>
+                <input id="Email" name="Email" type="text" value="@Model.Email" />
+
+            </div>
+
+            <div class="form-control">
+                <label for="Password">Password</label>
+                <input id="Password" name="Password" type="password" value="@Model.Password" />
+            </div>
+            <input class="btn" type="submit" value="Update" />
+        </div>
+
+
+    </form>
+
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
