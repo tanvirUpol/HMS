@@ -13,6 +13,9 @@
 <table class="table-admins">
     <tr>
         <th>
+            ID
+        </th>
+        <th>
             Name
         </th>
         <th>
@@ -27,12 +30,17 @@
         <th>
             Phone
         </th>
-        <th></th>
+        <th>
+            Buttons
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @item.Id
+            </td>
             <td>
                 @item.Name
             </td>
