@@ -1,0 +1,84 @@
+﻿@model IEnumerable<HMS.Models.StaffTask>
+
+@{
+    ViewBag.Title = "StaffTasks";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="admin-form">
+
+    <h2 style="text-align:center">Add Tasks</h2>
+    <br />
+    <br />
+    <br />
+
+    <form action="/Admin/StaffTasks" method="post">
+
+
+        <div class="form-container">
+
+
+            <div class="form-control">
+                <label for="StaffID">Staff ID</label>
+                <input id="StaffID" name="StaffID" type="text" value="@ViewBag.Id" readonly />
+            </div>
+
+            <div class="form-control">
+                <label for="Task">Task</label>
+                <input id="Task" name="Task" type="text" value="" />
+            </div>
+
+
+
+            <input class="btn" type="submit" value="Create" />
+        </div>
+
+        <table class="table-admins">
+            <tr>
+                <th>
+                    Task
+                </th>
+                <th>
+                    Status
+                </th>
+
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Task
+                    </td>
+
+
+                    @{
+                        if (item.Status == 0)
+                        {
+                            <td style="color:maroon;">
+                              <b>Pending</b>  
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="color:forestgreen;">
+                                <b>Done</b> 
+                            </td>
+                        }
+                    }
+
+
+                    <td>
+
+
+                        <a class="btn" style="background-color:darkred; margin-left:5px" href="/Admin/DeleteTask/@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </form>
+
+</div>

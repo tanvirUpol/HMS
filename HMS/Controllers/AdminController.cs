@@ -188,5 +188,33 @@ namespace HMS.Controllers
 
 
 
+
+        public ActionResult StaffTasks(int Id)
+        {
+            ViewBag.Id = Id;
+            HMSEntities db = new HMSEntities();
+            var ad = (from st in db.StaffTasks
+                      where st.StaffID == Id
+                      select st);
+
+            return View(ad);
+
+           
+        }
+
+        [HttpPost]
+        public ActionResult StaffTasks(StaffTask s)
+        {
+            HMSEntities db = new HMSEntities();
+            s.Status = 0;
+
+            db.StaffTasks.Add(s);
+            db.SaveChanges();
+            return RedirectToAction("ListStaff");
+
+        }
+
+
+
     }
 }

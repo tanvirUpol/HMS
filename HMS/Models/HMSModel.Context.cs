@@ -31,5 +31,6 @@ namespace HMS.Models
         public DbSet<Member> Members { get; set; }
         public DbSet<Request_Services> Request_Services { get; set; }
         public DbSet<Staff> Staffs { get; set; }
+        public DbSet<StaffTask> StaffTasks { get; set; }
     }
 }

@@ -163,6 +163,9 @@
     <Compile Include="Models\Staff.cs">
       <DependentUpon>HMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StaffTask.cs">
+      <DependentUpon>HMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +193,7 @@
     <Content Include="Views\Admin\UpdateAdmin.cshtml" />
     <Content Include="Views\Admin\EditAdmins.cshtml" />
     <Content Include="Views\Admin\EditStaff.cshtml" />
+    <Content Include="Views\Admin\StaffTasks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
