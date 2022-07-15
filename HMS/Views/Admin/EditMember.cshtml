@@ -1,0 +1,67 @@
+﻿@model HMS.Models.Member
+
+@{
+    ViewBag.Title = "EditMember";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Edit Member</h2>
+
+<div class="admin-form">
+
+    <form action="/Admin/EditMember" method="post">
+
+
+        <div class="form-container">
+
+            <div class="form-control">
+                <label for="Id">ID</label>
+                <input id="Id" name="Id" type="text" value="@Model.Id" readonly />
+            </div>
+
+            <div class="form-control">
+                <label for="Name">Name</label>
+                <input id="Name" name="Name" type="text" value="@Model.Name" />
+            </div>
+
+            <div class="form-control">
+                <label for="Age">Age</label>
+                <input id="Age" name="Age" type="number" value="@Model.Age" />
+            </div>
+
+            <div class="form-control">
+                <label>Gender</label>
+                <br />
+                <select name="Gender" id="Gender">
+                    <option value="Male" selected>Male</option>
+                    <option value="Female">Female </option>
+                </select>
+
+
+            </div>
+
+            <div class="form-control">
+                <label for="Gname">Gurdian Name</label>
+                <input id="Gname" name="Gname" type="text" value="@Model.Gname" />
+
+            </div>
+
+            <div class="form-control">
+                <label for="Phone">Phone</label>
+                <input id="Phone" name="Phone" type="text" value="@Model.Phone" />
+
+            </div>
+
+
+
+            <div class="form-control">
+                <label for="Password">Password</label>
+                <input id="Password" name="Password" type="password" value="@Model.Password" />
+            </div>
+            <input class="btn" type="submit" value="Update" />
+        </div>
+
+
+    </form>
+
+</div>

@@ -194,6 +194,8 @@
     <Content Include="Views\Admin\EditAdmins.cshtml" />
     <Content Include="Views\Admin\EditStaff.cshtml" />
     <Content Include="Views\Admin\StaffTasks.cshtml" />
+    <Content Include="Views\Admin\ListMembers.cshtml" />
+    <Content Include="Views\Admin\EditMember.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

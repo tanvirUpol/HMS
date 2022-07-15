@@ -226,6 +226,57 @@ namespace HMS.Controllers
         }
 
 
+        //Members actions
+        public ActionResult ListMembers()
+        {
+            var db = new HMSEntities();
+
+            var mem = (from s in db.Members select s);
+            return View(mem);
+
+        }
+
+        public ActionResult DeleteMember(int id)
+        {
+            HMSEntities db = new HMSEntities();
+            var st = (from s in db.Members where s.Id == id select s).SingleOrDefault();
+            db.Members.Remove(st);
+            db.SaveChanges();
+            return RedirectToAction("ListMembers");
+        }
+
+        public ActionResult EditMember(int Id)
+        {
+            HMSEntities db = new HMSEntities();
+            var mem = (from st in db.Members
+                      where st.Id == Id
+                      select st).FirstOrDefault();
+
+            return View(mem);
+        }
+
+        [HttpPost]
+        public ActionResult EditMember(Member s)
+        {
+            using (HMSEntities db = new HMSEntities())
+            {
+                var ad = (from st in db.Members
+                          where st.Id == s.Id
+                          select st).FirstOrDefault();
+                ad.Type = 2;
+                ad.Name = s.Name;
+                ad.Age = s.Age;
+                ad.Gender = s.Gender;
+                ad.Gname = s.Gname;
+                ad.Phone = s.Phone;
+                ad.Password = s.Password;
+                db.SaveChanges();
+                return RedirectToAction("ListMembers");
+            }
+
+        }
+
+
 
     }
 }

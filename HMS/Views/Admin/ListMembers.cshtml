@@ -1,0 +1,67 @@
+﻿@model IEnumerable<HMS.Models.Member>
+
+@{
+    ViewBag.Title = "ListMembers";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+<h2>List of Members</h2>
+
+@*<p>
+    <a class="btn" href="/Admin/CreateStaff">Create New</a>
+</p>*@
+<table class="table-admins">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            Gurdian Name
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Buttons
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Age
+            </td>
+            <td>
+                @item.Gender
+            </td>
+            <td>
+                @item.Gname
+            </td>
+            <td>
+                @item.Phone
+            </td>
+
+            <td>
+                <a class="btn" href="/Admin/EditMember/@item.Id">Edit</a>
+                <a class="btn" style="background-color:darkred; margin-left:5px" href="/Admin/DeleteMember/@item.Id">Delete</a>
+              @*  <a class="btn" style="background-color:royalblue; margin-left:5px" href="/Admin/StaffTasks/@item.Id">Assign Task</a>*@
+            </td>
+        </tr>
+    }
+
+</table>

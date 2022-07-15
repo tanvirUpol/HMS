@@ -15,8 +15,6 @@ namespace HMS.Controllers
 
 
 
-
-
         // GET: Home
         public ActionResult Index()
         {
@@ -37,18 +35,21 @@ namespace HMS.Controllers
                 var ad = (from s in db.Admins
                           where s.Id.Equals(e.Id)
                           && s.Password.Equals(e.Password)
+                          && s.Type.Equals(1)
                           select s).SingleOrDefault();
 
            
                 var mem = (from s in db.Members
                             where s.Id.Equals(e.Id)
                             && s.Password.Equals(e.Password)
-                            select s).SingleOrDefault();
+                             && s.Type.Equals(2)
+                           select s).SingleOrDefault();
 
                 var staff = (from s in db.Staffs
                            where s.Id.Equals(e.Id)
                            && s.Password.Equals(e.Password)
-                           select s).SingleOrDefault();
+                            && s.Type.Equals(3)
+                             select s).SingleOrDefault();
 
 
 
