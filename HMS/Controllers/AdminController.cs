@@ -8,6 +8,8 @@ using HMS.Models;
 
 namespace HMS.Controllers
 {
+    [AdminAccess]
+    [Authorize]
     public class AdminController : Controller
     {
         // GET: Admin
@@ -212,6 +214,15 @@ namespace HMS.Controllers
             db.SaveChanges();
             return RedirectToAction("ListStaff");
 
+        }
+
+        public ActionResult DeleteTask(int id)
+        {
+            HMSEntities db = new HMSEntities();
+            var st = (from s in db.StaffTasks where s.ID == id select s).SingleOrDefault();
+            db.StaffTasks.Remove(st);
+            db.SaveChanges();
+            return RedirectToAction("ListStaff");
         }
 
 
