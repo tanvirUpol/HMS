@@ -19,14 +19,14 @@ tr:nth-child(even) {
     
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-around;
+    /*flex-direction: column;*/
     height: 70vh;
 }
 
 .admin-contents{
-    width: 1300px;
-    margin-top: 100px;
+   /* width: 1300px;
+    margin-top: 100px;*/
 }
 
 .btn{
