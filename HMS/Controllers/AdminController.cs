@@ -44,11 +44,15 @@ namespace HMS.Controllers
         [HttpPost]
         public ActionResult CreateAdmin(Admin e)
         {
-            HMSEntities db = new HMSEntities();
-            e.Type = 1;
-            db.Admins.Add(e);
-            db.SaveChanges();
-            return RedirectToAction("ListAdmin");
+            if (ModelState.IsValid)
+            {
+                HMSEntities db = new HMSEntities();
+                e.Type = 1;
+                db.Admins.Add(e);
+                db.SaveChanges();
+                return RedirectToAction("ListAdmin");
+            }
+            return View();
 
         }
 
@@ -65,19 +69,26 @@ namespace HMS.Controllers
         [HttpPost]
         public ActionResult UpdateAdmin(Admin s)
         {
-            using (HMSEntities db = new HMSEntities())
+            if (ModelState.IsValid)
             {
-                var ad = (from st in db.Admins
-                               where st.Id == s.Id
-                               select st).FirstOrDefault();
-                ad.Type = 1;
-                ad.Name = s.Name;
-                ad.Phone = s.Phone;
-                ad.Email = s.Email;
-                ad.Password = s.Password;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                using (HMSEntities db = new HMSEntities())
+                {
+                    var ad = (from st in db.Admins
+                              where st.Id == s.Id
+                              select st).FirstOrDefault();
+                    ad.Type = 1;
+                    ad.Name = s.Name;
+                    ad.Phone = s.Phone;
+                    ad.Email = s.Email;
+                    ad.Password = s.Password;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
             }
+            return RedirectToAction("Index");
+
+
 
         }
 
@@ -138,11 +149,15 @@ namespace HMS.Controllers
         [HttpPost]
         public ActionResult CreateStaff(Staff e)
         {
-            HMSEntities db = new HMSEntities();
-            e.Type = 3;
-            db.Staffs.Add(e);
-            db.SaveChanges();
-            return RedirectToAction("ListStaff");
+            if (ModelState.IsValid)
+            {
+                HMSEntities db = new HMSEntities();
+                e.Type = 3;
+                db.Staffs.Add(e);
+                db.SaveChanges();
+                return RedirectToAction("ListStaff");
+            }
+            return View();
 
         }
 
@@ -161,21 +176,25 @@ namespace HMS.Controllers
         [HttpPost]
         public ActionResult EditStaff(Staff s)
         {
-            using (HMSEntities db = new HMSEntities())
+            if (ModelState.IsValid)
             {
-                var ad = (from st in db.Staffs
-                          where st.Id == s.Id
-                          select st).FirstOrDefault();
-                ad.Type = 3;
-                ad.Name = s.Name;            
-                ad.Age = s.Age;
-                ad.Gender = s.Gender;
-                ad.Address = s.Address;
-                ad.Phone = s.Phone;
-                ad.Password = s.Password;
-                db.SaveChanges();
-                return RedirectToAction("ListStaff");
+                using (HMSEntities db = new HMSEntities())
+                {
+                    var ad = (from st in db.Staffs
+                              where st.Id == s.Id
+                              select st).FirstOrDefault();
+                    ad.Type = 3;
+                    ad.Name = s.Name;
+                    ad.Age = s.Age;
+                    ad.Gender = s.Gender;
+                    ad.Address = s.Address;
+                    ad.Phone = s.Phone;
+                    /* ad.Password = s.Password;*/
+                    db.SaveChanges();
+                    return RedirectToAction("ListStaff");
+                }
             }
+            return RedirectToAction("ListStaff");
 
         }
 
@@ -207,11 +226,15 @@ namespace HMS.Controllers
         [HttpPost]
         public ActionResult StaffTasks(StaffTask s)
         {
-            HMSEntities db = new HMSEntities();
-            s.Status = 0;
+            if (ModelState.IsValid)
+            {
+                HMSEntities db = new HMSEntities();
+                s.Status = 0;
 
-            db.StaffTasks.Add(s);
-            db.SaveChanges();
+                db.StaffTasks.Add(s);
+                db.SaveChanges();
+                return RedirectToAction("ListStaff");
+            }
             return RedirectToAction("ListStaff");
 
         }
@@ -258,21 +281,26 @@ namespace HMS.Controllers
         [HttpPost]
         public ActionResult EditMember(Member s)
         {
-            using (HMSEntities db = new HMSEntities())
+            if (ModelState.IsValid)
             {
-                var ad = (from st in db.Members
-                          where st.Id == s.Id
-                          select st).FirstOrDefault();
-                ad.Type = 2;
-                ad.Name = s.Name;
-                ad.Age = s.Age;
-                ad.Gender = s.Gender;
-                ad.Gname = s.Gname;
-                ad.Phone = s.Phone;
-                ad.Password = s.Password;
-                db.SaveChanges();
-                return RedirectToAction("ListMembers");
+
+                using (HMSEntities db = new HMSEntities())
+                {
+                    var ad = (from st in db.Members
+                              where st.Id == s.Id
+                              select st).FirstOrDefault();
+                    ad.Type = 2;
+                    ad.Name = s.Name;
+                    ad.Age = s.Age;
+                    ad.Gender = s.Gender;
+                    ad.Gname = s.Gname;
+                    ad.Phone = s.Phone;
+                    /* ad.Password = s.Password;*/
+                    db.SaveChanges();
+                    return RedirectToAction("ListMembers");
+                }
             }
+            return RedirectToAction("ListMembers");
 
         }
 

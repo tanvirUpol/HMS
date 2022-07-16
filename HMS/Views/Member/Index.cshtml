@@ -1,7 +1,5 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model HMS.Models.Member
+@{ Layout = null; }
 
 <!DOCTYPE html>
 
@@ -14,24 +12,32 @@
 
     <table align="right">
         <tr>
-            <td><input type="button" name="mLogut" value="Logout" /></td>
-            <td><input type="button" name="mProfile" value="Profile" /></td>
+            <td><a href="/Home/logout"><input type="button" name="mLogut" value="Logout" /></a></td>
+            <td><a href="/Member/Index"><input type="button" name="mProfile" value="Profile" /></a></td>
         </tr>
     </table>
 
     <div>
         <h1>Welcome</h1>
+        <div>
+            <h4>Member</h4>
+            <h3>@Model.Name</h3>
+            <h3>@Model.Phone</h3>
+
+        </div>
 
         <p>We are providing several services bellow.You can chose any facilitis which are providing. If You have any queray or have plroblem please kindly report us.Our team always ready to work any difficulities satages.</p>
     </div>
 
     <div>
+        <a href="/Member/Members_Mealinfo">   <input type="button" name="OrderButton" value="Go here to order" />  </a> <br /><br />
+        <a href="/Member/Member_Request_service">  <input type="button" name="RequestrButton" value="Go here to Any Request" /> </a><br /><br /> 
+        <a href="/Member/Member_Mealinfo">  <input type="button" name="Members_Mealinfo" value="Go here to submit meal info" /> </a><br /><br />
 
-        <input type="button" name="OrderButton" value="Go here to order" /><br /><br />
-        <input type="button" name="RequestrButton" value="Go here to Any Request" /><br /><br />
         <input type="button" name="ActivityButton" value="Activity" /><br /><br />
         <input type="button" name="NoticeyButton" value="Notice" /><br /><br />
-        <input type="button" name="BillyButton" value="Pay Bill here" /><br /><br />
+        <a href="/Member/MemberBill"> <input type="button" name="BillyButton" value="Pay Bill here" /></a><br /><br />
+
         <input type="button" name="DataButton" value="See here Visualization of tour data" />
     </div>
 

@@ -13,19 +13,15 @@ namespace HMS.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class Admin
+    public partial class MemberBill
     {
+        
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public int Member_ID { get; set; }
         [Required]
-        public string Phone { get; set; }
+        public string Amount { get; set; }
         [Required]
-        [EmailAddress]
-        public string Email { get; set; }
-        [Required]
-        public string Password { get; set; }
-
-        public int Type { get; set; }
+        public string Payment_Method { get; set; }
     }
 }

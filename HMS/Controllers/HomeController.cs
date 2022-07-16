@@ -14,7 +14,6 @@ namespace HMS.Controllers
     {
 
 
-
         // GET: Home
         public ActionResult Index()
         {
@@ -87,22 +86,42 @@ namespace HMS.Controllers
             return RedirectToAction("Login");
         }
 
-        public ActionResult MemberRegistration()
+        /* public ActionResult MemberRegistration()
+         {
+             return View();
+
+         }
+
+         [HttpPost]
+         public ActionResult MemberRegistration(Member m)
+         {
+             HMSEntities db = new HMSEntities();
+             m.Type = 2;
+             db.Members.Add(m);
+             db.SaveChanges();
+
+             return RedirectToAction("Index");
+
+         }*/
+
+        public ActionResult MemReg()
         {
             return View();
-
         }
-
         [HttpPost]
-        public ActionResult MemberRegistration(Member m)
+        public ActionResult MemReg(Member m)
         {
-            HMSEntities db = new HMSEntities();
-            m.Type = 2;
-            db.Members.Add(m);
-            db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                HMSEntities db = new HMSEntities();
+                m.Type = 2;
+                db.Members.Add(m);
+                db.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
 
+            return View();
         }
     }
 }

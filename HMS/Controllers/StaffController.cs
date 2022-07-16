@@ -8,6 +8,8 @@ using HMS.Auth;
 
 namespace HMS.Controllers
 {
+    [StaffAccess]
+    [Authorize]
     public class StaffController : Controller
     {
         // GET: Staff

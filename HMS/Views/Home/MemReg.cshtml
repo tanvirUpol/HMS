@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "MemReg";
+    Layout = "~/Views/Shared/_Home_Layout.cshtml";
+}
+
+
+
+<div>
+    <form action="/Home/MemReg" method="post">
+
+        <table>
+            <tr>
+                <td colspan="3"><h2>Members Registration Form</h2>   </td>
+
+            </tr>
+
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="Name" value="" /></td>
+                <td>@Html.ValidationMessage("Name")</td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+
+                <td><input type="password" name="Password" value="" /></td>
+                <td>@Html.ValidationMessage("Password")</td>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+
+                <td><input type="number" name="Age" value="" /></td>
+                <td>@Html.ValidationMessage("Age")</td>
+            </tr>
+
+
+            <tr>
+                <td>Gname</td>
+
+                <td><input type="text" name="Gname" value="" /></td>
+                <td>@Html.ValidationMessage("Gname")</td>
+            </tr>
+
+
+            <tr>
+                <td>Gender</td>
+
+                <td>
+
+
+
+                    <input type="radio" name="Gender" value="Male"><b>Male</b>
+                    <input type="radio" name="Gender" value="Female"><b>Female</b>
+                    <input type="radio" name="Genderr" value="Other"><b>Other</b>
+
+
+                </td>
+                <td>@Html.ValidationMessage("Gender")</td>
+
+
+
+
+            </tr>
+
+            <tr>
+                <td>Phone</td>
+                <br />
+
+                <td><input type="number" name="Phone" value="" /></td>
+                <td>@Html.ValidationMessage("Phone")</td>
+            </tr>
+
+            <tr>
+                <td colspan="4"><input type="submit" name="submit" value="submit"> </td>
+
+            </tr>
+
+        </table>
+
+
+    </form>
+</div>

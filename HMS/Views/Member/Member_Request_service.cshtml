@@ -1,0 +1,71 @@
+﻿@model HMS.Models.Request_Services
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Members_Request_service</title>
+</head>
+<body>
+
+    <div>
+
+        <table align="right">
+            <tr>
+                <td><a href="/Home/logout"><input type="button" name="mLogut" value="Logout" /></a></td>
+                <td><a href="/Member/Index"><input type="button" name="mProfile" value="Profile" /></a></td>
+            </tr>
+        </table>
+
+
+
+
+
+    </div>
+
+
+
+    <form action="/Member/Member_Request_service" method="post">
+
+        <table>
+            <tr>
+                <td colspan="3" align="center"> Service Request  </td>
+
+            </tr>
+
+            <tr>
+                <td>MemberID:</td>
+                <td><input type="number" name="member_ID" value="" /></td>
+                <td>@Html.ValidationMessage("member_ID")</td>
+            </tr>
+
+            <tr>
+                <td>Service_Type:</td>
+
+                <td>
+                    <input type="radio" name="service_Type" value="Londry"><b>Londry</b>
+
+                    <input type="radio" name="service_Type" value="Cleaner"><b>Cleaner</b>
+
+                </td>
+                <td>@Html.ValidationMessage("service_Type")</td>
+
+
+            </tr>
+
+
+            <tr>
+
+                <td colspan="3"><input type="submit" name="submit" value="submit"> </td>
+            </tr>
+        </table>
+
+
+    </form>
+
+</body>
+</html>

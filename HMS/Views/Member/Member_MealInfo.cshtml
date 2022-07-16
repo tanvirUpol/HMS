@@ -1,0 +1,72 @@
+﻿@model HMS.Models.MealInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Members_Mealinfo</title>
+</head>
+<body>
+    <div>
+
+        <table align="right">
+            <tr>
+                <td><a href="/Home/logout"><input type="button" name="mLogut" value="Logout" /></a></td>
+                <td><a href="/Member/Index"><input type="button" name="mProfile" value="Profile" /></a></td>
+            </tr>
+        </table>
+
+
+
+
+
+    </div>
+
+    <form action="/Member/Member_Mealinfo" method="post">
+
+        <table>
+            <tr>
+                <td colspan="3" align="center"> Meal Info  </td>
+
+            </tr>
+
+            <tr>
+                <td>MemberID:</td>
+                <td><input type="number" name="Member_ID" value="" /></td>
+                <td>@Html.ValidationMessage("Member_ID")</td>
+            </tr>
+
+            <tr>
+                <td>Lunch:</td>
+                <td><input type="number" name="Lunch" value="" /></td>
+                <td>@Html.ValidationMessage("Lunch")</td>
+            </tr>
+
+            <tr>
+                <td>Dinner:</td>
+
+                <td><input type="number" name="Dinner" value="" /></td>
+                <td>@Html.ValidationMessage("Dinner")</td>
+            </tr>
+
+            <tr>
+                <td>Breakfast:</td>
+
+                <td><input type="number" name="breakfast" value="" /></td>
+                <td>@Html.ValidationMessage("breakfast")</td>
+            </tr>
+            <tr>
+
+                <td colspan="3"><input type="submit" name="submit" value="submit"> </td>
+            </tr>
+        </table>
+
+
+    </form>
+</body>
+</html>
