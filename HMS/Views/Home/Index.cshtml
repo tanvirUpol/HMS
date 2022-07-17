@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<HMS.Models.HomeNotice>
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Home_Layout.cshtml";
 }
@@ -11,15 +13,37 @@
     <div class="container">
         <div class="info">
             <h2>Welcome To Easy Hostel</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint explicabo rerum inventore itaque dolorum
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint explicabo rerum inventore itaque dolorum
                 alias
-                nemo eveniet doloribus dolor molestiae!</p>
+                nemo eveniet doloribus dolor molestiae!
+            </p>
             <br>
             <a href="/Home/MemReg" class="btn btn-signup">Sign Up</a>
 
         </div>
         <div class="showcase-img">
-            <img src="~/Content/images/undraw_apartment_rent_o-0-ut.svg" alt="">
+            @*  <img src="~/Content/images/undraw_apartment_rent_o-0-ut.svg" alt="">*@
+            <table class="table-notice">
+                <tr>
+                    <th>
+                        <p>Notice Board</p>
+                    </th>
+
+
+                </tr>
+
+                 @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>
+                        <p>@item.Notice</p>
+                    </td>
+                </tr>
+
+                   }
+
+            </table>
         </div>
     </div>
 </div>

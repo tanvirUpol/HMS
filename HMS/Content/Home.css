@@ -7,7 +7,7 @@
 .container{
   width: 1300px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -34,7 +34,7 @@
   padding: 12px 18px;
   color: #fff;
   border-radius: 5px;
-  
+ 
 }
 
 

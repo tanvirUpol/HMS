@@ -17,7 +17,11 @@ namespace HMS.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var db = new HMSEntities();
+
+            var notice = (from s in db.HomeNotices orderby s.ID descending select s).Take(5);
+            return View(notice);
+            
         }
 
         public ActionResult Login()

@@ -13,14 +13,10 @@ namespace HMS.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class MemberBill
+    public partial class HomeNotice
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         [Required]
-        public int Member_ID { get; set; }
-        [Required]
-        public string Amount { get; set; }
-        [Required]
-        public string Payment_Method { get; set; }
+        public string Notice { get; set; }
     }
 }

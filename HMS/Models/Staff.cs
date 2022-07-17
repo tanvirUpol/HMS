@@ -18,7 +18,7 @@ namespace HMS.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        
+
         [Range(18, 1000,
         ErrorMessage = "Age must be 18 or Above")]
         public int Age { get; set; }

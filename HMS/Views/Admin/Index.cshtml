@@ -39,17 +39,17 @@
 
     <div @*class="admin-form"*@>
 
-        <form action="#" method="post">
+        <form action="/admin/index" method="post">
 
 
             <div class="form-container">
-
+                <span class="text-info">@TempData["msg"]</span>
                 <div class="form-control">
                     <label for="Notice">Notice</label>
-                    <input id="Notice" name="Notice" type="text" value="" readonly />
+                    <input id="Notice" name="Notice" type="text" value="" />
                 </div>
 
-                
+
                 <input class="btn" type="submit" value="Submit" />
             </div>
 

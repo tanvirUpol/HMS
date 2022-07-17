@@ -48,6 +48,26 @@ tr:nth-child(even) {
     width: 100%;
 }
 
+.table-notice {
+    width: 400px;
+    
+}
+
+.reg-member {
+    width: 500px;
+}
+
+.table-notice th {
+    background-color: darkcyan;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+    .table-notice td {
+        padding: 12px;
+    }
+
 .admin-form{
     height: 100vh;
     display: flex;

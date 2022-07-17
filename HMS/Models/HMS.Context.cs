@@ -33,5 +33,6 @@ namespace HMS.Models
         public virtual DbSet<Request_Services> Request_Services { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<StaffTask> StaffTasks { get; set; }
+        public virtual DbSet<HomeNotice> HomeNotices { get; set; }
     }
 }

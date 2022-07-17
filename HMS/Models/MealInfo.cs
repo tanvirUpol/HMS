@@ -11,18 +11,13 @@ namespace HMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class MealInfo
     {
         public int Id { get; set; }
-        [Required]
         public int Member_ID { get; set; }
-        [Required]
         public int Lunch { get; set; }
-        [Required]
         public int Dinner { get; set; }
-        [Required]
         public int breakfast { get; set; }
     }
 }

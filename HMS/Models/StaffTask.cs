@@ -11,16 +11,12 @@ namespace HMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class StaffTask
     {
         public int ID { get; set; }
-        [Required]
         public int StaffID { get; set; }
-        [Required]
         public string Task { get; set; }
-        
         public int Status { get; set; }
     }
 }

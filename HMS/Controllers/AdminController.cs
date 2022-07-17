@@ -25,6 +25,22 @@ namespace HMS.Controllers
             
         }
 
+        [HttpPost]
+        public ActionResult Index(HomeNotice e)
+        {
+            HMSEntities db = new HMSEntities();
+            if (ModelState.IsValid)
+            {
+               
+                db.HomeNotices.Add(e);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            TempData["msg"] = "Can not send empty notice";
+            return RedirectToAction("Index");
+
+        }
+
         public ActionResult ListAdmin()
         {
             var db = new HMSEntities();
@@ -103,12 +119,16 @@ namespace HMS.Controllers
 
         public ActionResult EditAdmins(int Id)
         {
-            HMSEntities db = new HMSEntities();
-            var ad = (from st in db.Admins
-                      where st.Id == Id
-                      select st).FirstOrDefault();
+            if (ModelState.IsValid)
+            {
+                HMSEntities db = new HMSEntities();
+                var ad = (from st in db.Admins
+                          where st.Id == Id
+                          select st).FirstOrDefault();
 
-            return View(ad);
+                return View(ad);
+            }
+            return RedirectToAction("ListAdmin");
         }
 
         [HttpPost]

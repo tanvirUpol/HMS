@@ -11,14 +11,11 @@ namespace HMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Request_Services
     {
         public int Id { get; set; }
-        [Required]
         public int member_ID { get; set; }
-        [Required]
         public string Service_Type { get; set; }
     }
 }

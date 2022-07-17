@@ -150,6 +150,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HMS.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\HomeNotice.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MealInfo.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
