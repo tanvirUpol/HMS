@@ -37,6 +37,10 @@ tr:nth-child(even) {
     
   }
 
+.btn-signup {
+    background-color: #ff6a00;
+}
+
 
 .btnList {
     margin-left: 5px;
@@ -44,12 +48,17 @@ tr:nth-child(even) {
     
 }
 
+.btn-notice {
+    
+    color: rgb(73, 134, 204);
+}
 .table-admins {
     width: 100%;
 }
 
 .table-notice {
     width: 400px;
+    margin-bottom: 20px;
     
 }
 

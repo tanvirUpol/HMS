@@ -33,17 +33,23 @@
 
                 </tr>
 
-                 @foreach (var item in Model)
-                    {
-                <tr>
-                    <td>
-                        <p>@item.Notice</p>
-                    </td>
-                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <p>@item.Notice</p>
+                        </td>
+                    </tr>
 
-                   }
+                }
+
+
+
+
 
             </table>
+
+            <a href="#" class="btn-notice">Archive</a>
         </div>
     </div>
 </div>
