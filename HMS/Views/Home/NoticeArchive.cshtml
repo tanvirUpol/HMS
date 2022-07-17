@@ -1,0 +1,32 @@
+﻿@model IEnumerable<HMS.Models.HomeNotice>
+
+@{
+    ViewBag.Title = "NoticeArchive";
+    Layout = "~/Views/Shared/_Home_Layout.cshtml";
+}
+
+
+<table class="table-notice" style="margin: auto; margin-top:30px; margin-bottom: 80px;">
+    <tr>
+        <th>
+            <p>Notice Board</p>
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <p>@item.Notice</p>
+            </td>
+        </tr>
+
+    }
+
+
+
+
+
+</table>

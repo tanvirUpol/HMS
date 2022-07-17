@@ -205,6 +205,7 @@
     <Content Include="Views\Member\Member_MealInfo.cshtml" />
     <Content Include="Views\Member\Member_Request_service.cshtml" />
     <Content Include="Views\Member\MemberBill.cshtml" />
+    <Content Include="Views\Home\NoticeArchive.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

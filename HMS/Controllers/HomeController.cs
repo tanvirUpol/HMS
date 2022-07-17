@@ -24,6 +24,13 @@ namespace HMS.Controllers
             
         }
 
+        public ActionResult NoticeArchive()
+        {
+            var db = new HMSEntities();
+            var notice = (from s in db.HomeNotices orderby s.ID descending select s);
+            return View(notice);
+        }
+
         public ActionResult Login()
         {
             return View();
