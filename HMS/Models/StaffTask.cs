@@ -11,16 +11,12 @@ namespace HMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class CalGro
+    
+    public partial class StaffTask
     {
-        public int Id { get; set; }
-        public string Date { get; set; }
-        [Required]
-        [Range(0,15000, ErrorMessage="Price range should be Zero to Fifteen Thousand")]
-        public int Price { get; set; }
-        [Required]
-        public string Product { get; set; }
+        public int ID { get; set; }
+        public int StaffID { get; set; }
+        public string Task { get; set; }
+        public int Status { get; set; }
     }
 }

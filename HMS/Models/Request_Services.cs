@@ -13,14 +13,13 @@ namespace HMS.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class CalGro
+    public partial class Request_Services
     {
         public int Id { get; set; }
-        public string Date { get; set; }
         [Required]
-        [Range(0,15000, ErrorMessage="Price range should be Zero to Fifteen Thousand")]
-        public int Price { get; set; }
-        [Required]
-        public string Product { get; set; }
+        [Range(1000, 2000, ErrorMessage = "Member Id should be withween Zero to Fifteen Thousand")]
+        public int member_ID { get; set; }
+        public string Service_Type { get; set; }
+        public string Status { get; set; }
     }
 }

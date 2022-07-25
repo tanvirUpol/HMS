@@ -93,20 +93,23 @@
   <ItemGroup>
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Models\HMSModel.Context.tt">
+    <Content Include="Models\HMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HMSModel.edmx</DependentUpon>
-      <LastGenOutput>HMSModel.Context.cs</LastGenOutput>
+      <DependentUpon>HMS.edmx</DependentUpon>
+      <LastGenOutput>HMS.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\HMSModel.tt">
+    <Content Include="Models\HMS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HMSModel.edmx</DependentUpon>
-      <LastGenOutput>HMSModel.cs</LastGenOutput>
+      <DependentUpon>HMS.edmx</DependentUpon>
+      <LastGenOutput>HMS.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Auth\AdminAccess.cs" />
+    <Compile Include="Auth\MemberAccess.cs" />
+    <Compile Include="Auth\StaffAccess.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
@@ -115,42 +118,57 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>HMSModel.tt</DependentUpon>
+      <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CalGro.cs">
-      <DependentUpon>HMSModel.tt</DependentUpon>
+      <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HMSModel.Context.cs">
+    <Compile Include="Models\HMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HMSModel.Context.tt</DependentUpon>
+      <DependentUpon>HMS.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HMSModel.cs">
+    <Compile Include="Models\HMS.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HMSModel.tt</DependentUpon>
+      <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HMSModel.Designer.cs">
+    <Compile Include="Models\HMS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HMSModel.edmx</DependentUpon>
+      <DependentUpon>HMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\In_out_notes.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MealIinfo.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Member.cs">
-      <DependentUpon>HMSModel.tt</DependentUpon>
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Request_Services.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomDetail.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Staff.cs">
-      <DependentUpon>HMSModel.tt</DependentUpon>
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StaffTask.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\HMSModel.edmx">
+    <EntityDeploy Include="Models\HMS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HMSModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>HMS.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\HMSModel.edmx.diagram">
-      <DependentUpon>HMSModel.edmx</DependentUpon>
+    <Content Include="Models\HMS.edmx.diagram">
+      <DependentUpon>HMS.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Home_Layout.cshtml" />
@@ -161,6 +179,14 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\Staff\CalGro.cshtml" />
+    <Content Include="Views\Staff\In_out_note.cshtml" />
+    <Content Include="Views\Staff\In_out_note_edit.cshtml" />
+    <Content Include="Views\Shared\_Staff_Layout.cshtml" />
+    <Content Include="Views\Staff\Roomdetail.cshtml" />
+    <Content Include="Views\Staff\MealInfo.cshtml" />
+    <Content Include="Views\Staff\Request_Services.cshtml" />
+    <Content Include="Views\Staff\Request_Service_Update.cshtml" />
+    <Content Include="Views\Staff\Profile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
